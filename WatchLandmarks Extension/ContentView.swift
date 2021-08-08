@@ -1,21 +1,21 @@
 //
 //  ContentView.swift
-//  Landmarks
+//  WatchLandmarks Extension
 //
-//  Created by zhoupeng on 2021/7/27.
+//  Created by zhoupeng on 2021/8/4.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        LandmarkList()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(ModelData())
     }
 }
