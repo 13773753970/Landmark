@@ -22,11 +22,13 @@ struct ProfileEditor: View {
                 Text("Username").bold()
                 Divider()
                 TextField("Username", text: $profile.username)
+                    .accessibilityLabel("UsernameInput")
             }
             
             Toggle(isOn: $profile.prefersNotifications) {
                 Text("Enable Notification").bold()
             }
+            .accessibilityLabel("EnableNotificationInput")
             
             VStack(alignment: .leading, spacing: 20) {
                 Text("Seasonal Photo").bold()
@@ -37,11 +39,13 @@ struct ProfileEditor: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                .accessibilityLabel("SeasonalPhotoInput")
             }
             
             DatePicker(selection: $profile.goalDate, in: dateRange, displayedComponents: .date) {
                 Text("Goal Date").bold()
             }
+            .accessibilityLabel("GoalDataInput")
         }
     }
 }
